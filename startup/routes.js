@@ -8,6 +8,10 @@ const auth = require('../routes/auth');
 // const returns = require('../routes/returns');
 const error = require('../middleware/error');
 
+
+var swaggerUi = require('swagger-ui-express'),
+    swaggerDocument = require('../swagger.json');
+
 module.exports = function(app) {
   app.use(express.json());
   // app.use('/api/genres', genres);
@@ -17,5 +21,9 @@ module.exports = function(app) {
   app.use('/api/users', users);
   app.use('/api/auth', auth);
   // app.use('/api/returns', returns);
+
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+  app.use('/api/', express.Router());
+
   app.use(error);
 }

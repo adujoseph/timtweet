@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
+    "start": "node index.js",
     "test": "jest --watchAll --verbose"
   },
   "engines": {
-    "node":"8.11.3"
+    "node": "8.11.3"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
     "mongoose": "^5.0.2",
+    "swagger-ui-express": "^4.0.1",
     "winston": "^2.4.0",
     "winston-mongodb": "^3.0.0"
   },
