@@ -9,12 +9,16 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "localhost:3000",
+  "host": "http://timtweet.herokuapp.com",
   "basePath": "/api",
   "tags": [
     {
       "name": "Users",
       "description": "API for users in the system"
+    },
+    {
+      "name": "Auth",
+      "description": "API for user login"
     }
   ],
   "schemes": [
