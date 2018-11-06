@@ -51,6 +51,9 @@
             "description": "New user is created",
             "schema": {
               "$ref": "#/definitions/User"
+            },
+            "400": {
+              "description": "bad request"
             }
           }
         }
@@ -160,21 +163,36 @@
             }
           }
         }
-      },
-      "get": {
+      }
+    },
+    "/resetpass":  {
+      "post": {
         "tags": [
-          "Login"
+          "Reset Password"
         ],
-        "summary": "Allow access to app",
+        "description": "User reset password when password is forgotten",
+        "parameters": [
+          {
+            "name": "resetpass",
+            "in": "body",
+            "description": "have access to set a new password",
+            "schema": {
+              "$ref": "#/definitions/resetpass"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Login successful",
             "schema": {
-              "$ref": "#/definitions/"
+              "$ref": "#/definitions/Auth"
             }
           }
         }
-      } 
+      }
     }
   },
   "definitions": {
