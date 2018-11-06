@@ -144,7 +144,7 @@
         "description": "Login as already registered user",
         "parameters": [
           {
-            "name": "auth",
+            "name": "Auth",
             "in": "body",
             "description": "User that we want to access dashboard",
             "schema": {
@@ -160,6 +160,9 @@
             "description": "Login successful",
             "schema": {
               "$ref": "#/definitions/Auth"
+            },
+          "400": {
+              "description": "bad request"
             }
           }
         }
@@ -234,6 +237,10 @@
       },
       "type":"string",
       "$ref":"#/definitions/Auth"
+    },
+    "resetpass":{
+      "type":"string",
+      "$ref":"#/definitions/resetpass"
     }
   }
 }

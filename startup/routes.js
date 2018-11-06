@@ -5,11 +5,15 @@ const express = require('express');
 // const rentals = require('../routes/rentals');
 const users = require('../routes/users');
 const auth = require('../routes/auth');
+const resetpass = require('../routes/resetpass');
 // const returns = require('../routes/returns');
 const error = require('../middleware/error');
 
 
 var swaggerUi = require('swagger-ui-express'),
+// let str = process.env=== 'prod'? '../swagger-prod.json':'../swagger.json';
+// let swaggerDocument = require(str);
+
     swaggerDocument = require('../swagger.json');
 
 module.exports = function(app) {
@@ -20,6 +24,7 @@ module.exports = function(app) {
   // app.use('/api/rentals', rentals);
   app.use('/api/users', users);
   app.use('/api/auth', auth);
+  app.use('/api/resetpass', resetpass)
   // app.use('/api/returns', returns);
 
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
