@@ -132,6 +132,49 @@
           }
         }
       }
+    },
+    "/auth":{
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "Login as already registered user",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to access dashboard",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Login successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Login"
+        ],
+        "summary": "Allow access to app",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      } 
     }
   },
   "definitions": {
