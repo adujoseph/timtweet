@@ -133,7 +133,7 @@
         }
       }
     },
-    "/auth":{
+    "/auth":  {
       "post": {
         "tags": [
           "Auth"
@@ -141,11 +141,11 @@
         "description": "Login as already registered user",
         "parameters": [
           {
-            "name": "user",
+            "name": "auth",
             "in": "body",
             "description": "User that we want to access dashboard",
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/definitions/Auth"
             }
           }
         ],
@@ -156,7 +156,7 @@
           "200": {
             "description": "Login successful",
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/definitions/Auth"
             }
           }
         }
@@ -170,7 +170,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Users"
+              "$ref": "#/definitions/"
             }
           }
         }
@@ -199,6 +199,23 @@
     "Users": {
       "type": "array",
       "$ref": "#/definitions/User"
+    },
+    "auth": {
+      "required":[
+        "email",
+        "password"
+      ],
+      "properties": {
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+         "password": {
+          "type": "string"
+        }
+      },
+      "type":"string",
+      "$ref":"#/definitions/Auth"
     }
   }
 }
